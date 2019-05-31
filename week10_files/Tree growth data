@@ -1,0 +1,22 @@
+download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/week10_files/growth_data.csv", destfile= "growth_data.csv")
+x<-read.table("growth_data.csv",header=T,sep=",",stringsAsFactors=F)
+x
+dim(x)
+head(x)
+str(x)
+a<-subset(x, Site=="northeast")
+sd(a$Circumf_2014_cm)
+boxplot(a[,c(3,6)],xlab="Time", ylab="Tree circumference")
+sd(a$Circumf_2014_cm)
+sd(a$Circumf_2019_cm)
+mean(a$Circumf_1999_cm)
+mean(a$Circumf_2019_cm)
+boxplot(a[,c(3,6)],xlab="Time", ylab="Tree circumference")
+
+
+b<-subset(x, Site=="southwest")
+sd(b$Circumf_1999_cm)
+sd(b$Circumf_2019_cm)
+mean(b$Circumf_1999_cm)
+mean(b$Circumf_2019_cm)
+boxplot(b[,c(3,6)],xlab="Timeperiod",ylab="Tree Circumference")
